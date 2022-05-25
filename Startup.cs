@@ -21,22 +21,22 @@ namespace ConsoleAppAPI
             //{
             //    await context.Response.WriteAsync("First Writer");
             //});
-            app.Use(async (context,next) =>
-            {
-                await context.Response.WriteAsync("Firstt 1 Writer\n");
-                await next();
-                await context.Response.WriteAsync("Firstt 2 Writer\n");
-            });
+            //app.Use(async (context,next) =>
+            //{
+            //    await context.Response.WriteAsync("Firstt 1 Writer\n");
+            //    await next();
+            //    await context.Response.WriteAsync("Firstt 2 Writer\n");
+            //});
 
-            app.UseMiddleware<MiddlewareClass>();
+            //app.UseMiddleware<MiddlewareClass>();
 
-            app.Map("/code", code);
+            //app.Map("/code", code);
 
 
-            app.Run(async context =>
-            {
-                await context.Response.WriteAsync("Second Writer\n");
-            });
+            //app.Run(async context =>
+            //{
+            //    await context.Response.WriteAsync("Second Writer\n");
+            //});
 
             if (env.IsDevelopment())
             {
@@ -54,14 +54,14 @@ namespace ConsoleAppAPI
             });
         }
 
-        private void code(IApplicationBuilder app)
-        {
-            app.Use(async (context, next) =>
-            {
-                await context.Response.WriteAsync("Custom 1 Writer\n");
-                //await next();
-                //await context.Response.WriteAsync("Custom 2 Writer\n");
-            });
-        }
+        //private void code(IApplicationBuilder app)
+        //{
+        //    app.Use(async (context, next) =>
+        //    {
+        //        await context.Response.WriteAsync("Custom 1 Writer\n");
+        //        //await next();
+        //        //await context.Response.WriteAsync("Custom 2 Writer\n");
+        //    });
+        //}
     }
 }
